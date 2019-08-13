@@ -1,5 +1,5 @@
 package zoo.map;
 
-public class Map {
+public class MapModel {
 
 }
