@@ -9,6 +9,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <BorderPane prefHeight="1920.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoo.map.MapControl">
    <top>
       <AnchorPane prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -29,6 +30,25 @@
             <PasswordField fx:id="txtPassword" layoutX="917.0" layoutY="75.0" promptText="Password" />
             <TextField fx:id="txtUsername" layoutX="917.0" layoutY="38.0" promptText="Username" />
             <Label fx:id="lblStatus" layoutX="917.0" layoutY="14.0" prefHeight="17.0" prefWidth="148.0" text="Status" />
+=======
+<BorderPane prefHeight="1920.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField alignment="CENTER" editable="false" prefHeight="54.0" prefWidth="1080.0" promptText="Zoo viel" text="Zoo viel">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnLogin" layoutX="964.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Login">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+>>>>>>> branch 'Feature_Map' of https://github.com/JulienVay0102/Zoo.git
          </children>
       </AnchorPane>
    </top>
