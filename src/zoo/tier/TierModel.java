@@ -1,5 +1,5 @@
 package zoo.tier;
-
+import zoo.tierart.*;
 public class TierModel {
 	public TierModel() {
 		// TODO Auto-generated constructor stub
@@ -10,6 +10,8 @@ public class TierModel {
 	private int alter;
 	private char gender;
 	private String date;
+	private TierartModel tierart;
+	//private PflegerModel pfleger;
 	
 	public int getId() {
 		return id;
