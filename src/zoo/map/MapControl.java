@@ -1,6 +1,5 @@
 package zoo.map;
 
-<<<<<<< HEAD
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -59,22 +58,6 @@ public class MapControl {
 
 	public void setTxtPassword(TextField txtPassword) {
 		this.txtPassword = txtPassword;
-=======
-import java.awt.Button;
-
-import javafx.fxml.FXML;
-
-public class MapControl {
+	}
 	
-	@FXML
-	Button btnLogin = new Button();
-	
-	
-
-	public void pflegerLogin() {
-		
-		
->>>>>>> branch 'Feature_Map' of https://github.com/JulienVay0102/Zoo.git
-	};
-
 }

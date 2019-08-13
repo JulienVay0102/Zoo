@@ -1,19 +1,6 @@
 package zoo.tier;
-<<<<<<< HEAD
+import zoo.map.PflegerModel;
 import zoo.tierart.*;
-public class TierModel {
-	public TierModel() {
-		// TODO Auto-generated constructor stub
-	}
-	private int id;
-	private String name;
-	private int height;
-	private int alter;
-	private char gender;
-	private String date;
-	private TierartModel tierart;
-	//private PflegerModel pfleger;
-=======
 
 public class TierModel {
 	public TierModel() {
@@ -25,7 +12,8 @@ public class TierModel {
 	private int alter;
 	private char gender;
 	private String date;
->>>>>>> branch 'Feature_Tier' of https://github.com/JulienVay0102/Zoo.git
+	private TierartModel tierart;
+	private PflegerModel pfleger;
 	
 	public int getId() {
 		return id;
@@ -62,6 +50,18 @@ public class TierModel {
 	}
 	public void setDate(String date) {
 		this.date = date;
+	}
+	public TierartModel getTierart() {
+		return tierart;
+	}
+	public void setTierart(TierartModel tierart) {
+		this.tierart = tierart;
+	}
+	public PflegerModel getPfleger() {
+		return pfleger;
+	}
+	public void setPfleger(PflegerModel pfleger) {
+		this.pfleger = pfleger;
 	}
 	
 

@@ -13,7 +13,7 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../zoo/map/mapview.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../map/mapview.fxml"));
         primaryStage.setTitle("Zoo viel");
         primaryStage.setScene(new Scene(root, 1100, 1000));
         primaryStage.show();
