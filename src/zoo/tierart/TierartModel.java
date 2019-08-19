@@ -8,6 +8,17 @@ public class TierartModel {
 	private float groesse;
 	private String nahrung;
 	
+	public TierartModel(String gattung, int anzahl, String lebensraum, float groesse, String nahrung) {
+		super();
+		this.gattung = gattung;
+		this.anzahl = anzahl;
+		this.lebensraum = lebensraum;
+		this.groesse = groesse;
+		this.nahrung = nahrung;
+	}
+	public TierartModel() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getGattung() {
 		return gattung;
 	}
@@ -37,6 +48,11 @@ public class TierartModel {
 	}
 	public void setNahrung(String nahrung) {
 		this.nahrung = nahrung;
+	}
+	@Override
+	public String toString() {
+		return "TierartModel [gattung=" + gattung + ", anzahl=" + anzahl + ", lebensraum=" + lebensraum + ", groesse="
+				+ groesse + ", nahrung=" + nahrung + "]";
 	}
 	
 	
