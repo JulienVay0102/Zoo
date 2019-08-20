@@ -9,7 +9,7 @@ public class TierModel {
 	private int tierID;
 	private String name;
 	private int height;
-	private int alter;
+	private int tieralter;
 	private String gender;
 	private String date;
 	private TierartModel tierart;
@@ -21,7 +21,7 @@ public class TierModel {
 		this.tierID = tierID;
 		this.name = name;
 		this.height = height;
-		this.alter = alter;
+		this.tieralter = alter;
 		this.gender = gender;
 		this.date = date;
 		this.tierart = tierart;
@@ -45,11 +45,11 @@ public class TierModel {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-	public int getAlter() {
-		return alter;
+	public int getTierAlter() {
+		return tieralter;
 	}
-	public void setAlter(int alter) {
-		this.alter = alter;
+	public void setTierAlter(int alter) {
+		this.tieralter = alter;
 	}
 	public String getGender() {
 		return gender;
@@ -79,7 +79,7 @@ public class TierModel {
 	
 	@Override
 	public String toString() {
-		return "TierModel [tierID=" + tierID + ", name=" + name + ", height=" + height + ", alter=" + alter
+		return "TierModel [tierID=" + tierID + ", name=" + name + ", height=" + height + ", alter=" + tieralter
 				+ ", gender=" + gender + ", date=" + date + ", tierart=" + tierart + ", pfleger=" + pfleger + "]";
 	}
 	
