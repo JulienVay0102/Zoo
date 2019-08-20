@@ -1,5 +1,9 @@
 package zoo.pfleger;
 
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import zoo.utils.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -11,7 +15,14 @@ import zoo.tier.TierDAO;
 import zoo.tier.TierModel;
 
 public class PflegerControl {
-	
+
+    public void switchScene(String sceneName){
+        main.switchScene(sceneName);
+    }
+    public void setMain(Main main){
+        this.main = main;
+    }
+
 	TierModel tierModel;
 	
 	@FXML
