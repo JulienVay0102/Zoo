@@ -4,7 +4,9 @@ package zoo.tier;
 import java.sql.*;
 import java.util.ArrayList;
 
+import zoo.pfleger.PflegerDao;
 import zoo.pfleger.PflegerModel;
+import zoo.tierart.TierartDao;
 import zoo.tierart.TierartModel;
 import zoo.utils.DBConnection;
 
@@ -24,13 +26,11 @@ public class TierDAO {
 	        	tier.setTierID(tierID);
 	        	tier.setName(rs.getString	("name"));
 	        	tier.setHeight(rs.getInt	("height"));
-	        	tier.setTierAlter(rs.getInt		("tieralter"));
+	        	tier.setTierAlter(rs.getInt	("tieralter"));
 	        	tier.setGender(rs.getString	("gender"));
 	        	tier.setDate(rs.getString	("date"));
-	        	tier.setTierart(null);
-	        	//r.setTierart(TierartDao.getTierart(rs.getString("gattung")));
-	        	//TODO: Pfleger fehlt
-	        	tier.setPfleger(null);     
+	        	tier.setTierart(TierartDao.getTierartModel(rs.getString("gattung")));
+	        	tier.setPfleger(PflegerDao.getPflegerModel(rs.getInt("pflegerId")));     
 	        }
             return tier;       
 		} catch (SQLException e) {
@@ -52,9 +52,8 @@ public class TierDAO {
 			ps.setInt		(3, alter);
 			ps.setString	(4, gender);
 			ps.setString	(5, date);
-			ps.setString	(6, "tierart.getGattung()");
-			//TODO: Pfleger fehlt noch!
-			ps.setInt		(7, 1);
+			ps.setString	(6, tierart.getGattung());
+			ps.setInt		(7, pfleger.getPflegerID());
 	        ps.executeUpdate();
 			
 			//String sql = "";
@@ -78,9 +77,8 @@ public class TierDAO {
 			ps.setInt			(3, tieralter);
 			ps.setString		(4, gender);
 			ps.setString		(5, date);
-			ps.setString		(6, "TestTestErrorUff");
-			ps.setInt			(7, 1);
-			
+			ps.setString		(6, tierart.getGattung());
+			ps.setInt			(7, pfleger.getPflegerID());
 			ps.setInt			(8, tierID);
 			
 			ps.executeUpdate();
@@ -127,9 +125,9 @@ public class TierDAO {
 		        	tier.setGender		(rs.getString	("gender"));
 		        	tier.setDate		(rs.getString	("date"));
 		        	tier.setTierart		(null);
-		        	//r.setTierart(TierartDao.getTierart(rs.getString("gattung")));
-		        	//TODO: Pfleger fehlt
-		        	tier.setPfleger		(null);  
+		        	tier.setTierart(TierartDao.getTierartModel(rs.getString("gattung")));
+		        	tier.setPfleger(PflegerDao.getPflegerModel(rs.getInt("pflegerID")));
+		        	
 		        	tierListe.add(tier);
 			 }
 			 return tierListe;
