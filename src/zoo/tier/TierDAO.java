@@ -9,6 +9,7 @@ import zoo.utils.DBConnection;
 public class TierDAO {
 	
 	public static TierModel getTier(int tierID) {
+		
 		try {
 			Connection conn = DBConnection.getConnection();
 			TierModel tier = new TierModel();
@@ -36,10 +37,12 @@ public class TierDAO {
 	}
 	
 	public static void createTier(String name, int height, int alter, String gender, String date, TierartModel tierart, PflegerModel pfleger ) {
+		
 		try {
+			
 			Connection conn = DBConnection.getConnection();
 	
-				final String sql2 = "INSERT INTO tier (name, height, tieralter, gender, date, gattung, pflegerID) VALUES (?,?,?,?,?,?,?)";
+			final String sql2 = "INSERT INTO tier (name, height, tieralter, gender, date, gattung, pflegerID) VALUES (?,?,?,?,?,?,?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql2);
 		
