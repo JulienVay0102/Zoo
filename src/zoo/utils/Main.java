@@ -13,9 +13,9 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../zoo/map/mapview.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../zoo/pfleger/pflegerview.fxml"));
         primaryStage.setTitle("Zoo viel");
-        primaryStage.setScene(new Scene(root, 1100, 1000));
+        primaryStage.setScene(new Scene(root, 1000, 700));
         primaryStage.show();
     }
 
