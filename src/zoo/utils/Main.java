@@ -15,7 +15,6 @@ public class Main extends Application {
     public HashMap<String, Scene> scenes = new HashMap<String, Scene>();
     private Stage primaryStage;
 
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
@@ -49,22 +48,4 @@ public class Main extends Application {
     }
 }
 
-//public class Main extends Application {
-//	
-//	@Override
-//	public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getResource("../../zoo/map/mapview.fxml"));
-//        primaryStage.setTitle("Zoo viel");
-//        primaryStage.setScene(new Scene(root, 1100, 1000));
-//        primaryStage.show();
-//    }
-//
-//	public static void main(String[] args) {
-//		
-//		launch(args);
-//		
-//
-//	}
-//
-//}
 
