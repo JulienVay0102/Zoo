@@ -1,5 +1,5 @@
 package zoo.tier;
-import zoo.map.PflegerModel;
+import zoo.pfleger.PflegerModel;
 import zoo.tierart.*;
 
 public class TierModel {

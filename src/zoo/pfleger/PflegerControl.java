@@ -1,4 +1,4 @@
-package zoo.map;
+package zoo.pfleger;
 
 
 import javafx.fxml.FXML;

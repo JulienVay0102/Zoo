@@ -2,7 +2,7 @@ package zoo.tierart;
 
 import java.util.ArrayList;
 
-import zoo.map.PflegerModel;
+import zoo.pfleger.PflegerModel;
 import zoo.tier.TierDAO;
 
 public class Test {

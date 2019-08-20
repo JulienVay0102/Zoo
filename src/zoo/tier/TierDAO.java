@@ -2,7 +2,7 @@ package zoo.tier;
 
 import java.sql.*;
 
-import zoo.map.PflegerModel;
+import zoo.pfleger.PflegerModel;
 import zoo.tierart.TierartModel;
 import zoo.utils.DBConnection;
 
