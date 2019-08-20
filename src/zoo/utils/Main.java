@@ -1,30 +1,70 @@
 package zoo.utils;
 
+import java.util.HashMap;
+
 import javafx.application.Application;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-
+import zoo.map.MapControl;
+import zoo.map.PflegerControl;
 
 public class Main extends Application {
-	
-	@Override
-	public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../zoo/map/mapview.fxml"));
-        primaryStage.setTitle("Zoo viel");
-        primaryStage.setScene(new Scene(root, 1100, 1000));
+
+    public HashMap<String, Scene> scenes = new HashMap<String, Scene>();
+    private Stage primaryStage;
+
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        this.primaryStage = primaryStage;
+        FXMLLoader fxmlLoader = new FXMLLoader();
+
+        fxmlLoader.setLocation(Main.class.getResource("../../zoo/map/mapview.fxml"));
+        scenes.put("mapview",new Scene(fxmlLoader.load(), 1100, 1000));
+        MapControl controller = fxmlLoader.getController();
+        controller.setMain(this);
+
+        
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Main.class.getResource("../../zoo/map/pflegerview.fxml"));
+        Scene scenePfleger = new Scene(fxmlLoader.load(), 1100, 1000);
+        scenes.put("pflegerview", scenePfleger);
+        PflegerControl controller2 = fxmlLoader.getController();
+        controller2.setMain(this);
+
+        primaryStage.setTitle("Affenzirkus");
+        primaryStage.setScene(scenes.get("mapview"));
         primaryStage.show();
+
     }
 
-	public static void main(String[] args) {
-		
-		launch(args);
-		
+    public void switchScene(String sceneName){
+        primaryStage.setScene(scenes.get(sceneName));
+    }
 
-	}
-
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
+
+//public class Main extends Application {
+//	
+//	@Override
+//	public void start(Stage primaryStage) throws Exception{
+//        Parent root = FXMLLoader.load(getClass().getResource("../../zoo/map/mapview.fxml"));
+//        primaryStage.setTitle("Zoo viel");
+//        primaryStage.setScene(new Scene(root, 1100, 1000));
+//        primaryStage.show();
+//    }
+//
+//	public static void main(String[] args) {
+//		
+//		launch(args);
+//		
+//
+//	}
+//
+//}
 

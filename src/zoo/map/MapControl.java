@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import zoo.utils.Main;
 
 public class MapControl {
 	
@@ -17,12 +18,13 @@ public class MapControl {
 	@FXML
 	private TextField txtPassword = new TextField();
 
+	private Main main;
 	
 	
 
 	public void pflegerLogin(ActionEvent event) {
 		if (txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
-			lblStatus.setText("Login successful");
+			switchScene("pflegerview");
 			
 		}else {
 			lblStatus.setText("Login failed");
@@ -31,7 +33,13 @@ public class MapControl {
 	}
 
 
+	public void switchScene(String sceneName){
+        main.switchScene(sceneName);
+    }
 
+    public void setMain(Main main){
+        this.main = main;
+    }
 
 	
 	
