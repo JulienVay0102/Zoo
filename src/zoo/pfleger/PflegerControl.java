@@ -16,6 +16,8 @@ import zoo.tier.TierModel;
 
 public class PflegerControl {
 
+	private Main main;
+	
     public void switchScene(String sceneName){
         main.switchScene(sceneName);
     }

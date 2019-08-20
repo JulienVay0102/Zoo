@@ -27,7 +27,7 @@ public class Main extends Application {
 
         
         fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(Main.class.getResource("../../zoo/map/pflegerview.fxml"));
+        fxmlLoader.setLocation(Main.class.getResource("../../zoo/pfleger/pflegerview.fxml"));
         Scene scenePfleger = new Scene(fxmlLoader.load(), 1100, 1000);
         scenes.put("pflegerview", scenePfleger);
         PflegerControl controller2 = fxmlLoader.getController();
