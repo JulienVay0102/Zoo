@@ -57,7 +57,7 @@ public class PflegerControl {
 	 }
 	 
 	 public void onCreateButtonClicked () {
-		 System.out.println("anlegen");
+		 switchScene("tieranlegenview");
 	 }
 	
 }
