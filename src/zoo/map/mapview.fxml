@@ -48,7 +48,7 @@
                   <Image url="@../../res/mapviewBody.png" />
                </image>
             </ImageView>
-      <Button layoutX="716.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Ankylosaurus" />
+      <Button fx:id="btnShowAnkylo" layoutX="716.0" layoutY="353.0" mnemonicParsing="false" onAction="#showAnkylo" prefHeight="25.0" prefWidth="126.0" text="Ankylosaurus" />
       <Button layoutX="33.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Kamel" />
          </children>
       </AnchorPane>
