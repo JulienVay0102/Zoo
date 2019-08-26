@@ -32,7 +32,7 @@ public class TierController extends AbstractController {
 	@FXML
 	private TextField tfName;
 	@FXML
-	private TextField tfHoehe;
+	private TextField tfHeight;
 	@FXML
 	private TextField tfTieralter;
 	@FXML
@@ -53,7 +53,7 @@ public class TierController extends AbstractController {
 
 	@FXML
 	private void updateAnimal() {
-		TierDAO.updateTier(Integer.valueOf(tfTierID.getText()), tfName.getText(), 0,
+		TierDAO.updateTier(Integer.valueOf(tfTierID.getText()), tfName.getText(), Integer.valueOf(tfHeight.getText()),
 				Integer.valueOf(tfTieralter.getText()), tfGender.getText(), tfDate.getText(),
 				TierartDao.getTierartModel(tfGattung.getText()),
 				PflegerDao.getPflegerModel(Integer.valueOf(tfPflegerID.getText())));
@@ -75,8 +75,10 @@ public class TierController extends AbstractController {
 	}
 
 	public void onLoad() {
+		System.out.println((Session.getInstance().getTier().getHeight()));
 		tfTierID.setText(Integer.toString(Session.getInstance().getTier().getTierID()));
 		tfName.setText(Session.getInstance().getTier().getName());
+		tfHeight.setText(Integer.toString((Session.getInstance().getTier().getHeight())));
 		tfTieralter.setText(Integer.toString(Session.getInstance().getTier().getTierAlter()));
 		tfGattung.setText(Session.getInstance().getTier().getTierart().getGattung());
 		tfPflegerID.setText(Integer.toString(Session.getInstance().getTier().getPfleger().getPflegerID()));
