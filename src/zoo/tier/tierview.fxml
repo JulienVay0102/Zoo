@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoo.tier.TierController">
+   <children>
+      <Button id="backBtn" fx:id="backBtn" layoutX="363.0" layoutY="262.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="101.0" text="&lt;-Back">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button id="updateBtn" fx:id="updateBtn" layoutX="363.0" layoutY="76.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="101.0" text="Update animal">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button id="deleteBtn" fx:id="deleteBtn" layoutX="363.0" layoutY="142.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="101.0" text="Delete animal">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <TextField fx:id="tfTierID" layoutX="148.0" layoutY="78.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfName" layoutX="148.0" layoutY="108.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfHeight" layoutX="148.0" layoutY="138.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfTieralter" layoutX="148.0" layoutY="168.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfGender" layoutX="148.0" layoutY="198.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfDate" layoutX="148.0" layoutY="228.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfGattung" layoutX="148.0" layoutY="258.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfPflegerID" layoutX="148.0" layoutY="288.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <AmbientLight color="CHARTREUSE" layoutX="185.0" layoutY="123.0" lightOn="true" />
+      <AmbientLight color="CHARTREUSE" layoutX="114.0" layoutY="165.0" lightOn="true" />
+      <Label layoutX="155.0" layoutY="47.0" prefHeight="36.0" prefWidth="161.0" text="Tierinformationen">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="85.0" text="TierID" />
+      <Label layoutX="92.0" layoutY="115.0" text="Name" />
+      <Label layoutX="92.0" layoutY="145.0" text="Hoehe" />
+      <Label layoutX="92.0" layoutY="175.0" text="Tieralter" />
+      <Label layoutX="92.0" layoutY="265.0" text="Gattung" />
+      <Label layoutX="92.0" layoutY="295.0" text="PflegerID" />
+      <Label layoutX="92.0" layoutY="205.0" text="Gender" />
+      <Label layoutX="92.0" layoutY="235.0" text="Date" />
+   </children>
+</Pane>
