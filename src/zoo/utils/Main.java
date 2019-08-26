@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import zoo.map.MapControl;
 import zoo.pfleger.PflegerControl;
 import zoo.tier.TierAnlegenControl;
+import zoo.tier.TierController;
 
 public class Main extends Application {
 
@@ -44,6 +45,14 @@ public class Main extends Application {
         TierAnlegenControl tierAnlegenController = fxmlLoader.getController();
         controllers.put("tieranlegenview", tierAnlegenController);
         tierAnlegenController.setMain(this);
+        
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Main.class.getResource("../../zoo/tier/tierview.fxml"));
+        Scene sceneTierDetail = new Scene(fxmlLoader.load(), 1100, 1000);
+        scenes.put("tierview", sceneTierDetail);
+        TierController tierController = fxmlLoader.getController();
+        controllers.put("tierview", tierController);
+        tierController.setMain(this);
 
         primaryStage.setTitle("Affenzirkus");
         primaryStage.setScene(scenes.get("mapview"));

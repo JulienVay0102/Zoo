@@ -56,7 +56,8 @@ public class PflegerControl extends AbstractController{
 
 	 
 	 public void onUpdateButtonClicked () {
-		 System.out.println(tierModel);
+		 Session.getInstance().setTier(tierModel);
+		 switchScene("tierview");
 	 }
 	 
 	 public void onCreateButtonClicked () {
