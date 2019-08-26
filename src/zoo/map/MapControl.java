@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Popup;
 import zoo.pfleger.PflegerModel;
 import zoo.utils.AbstractController;
 import zoo.utils.Main;
@@ -15,9 +16,9 @@ public class MapControl extends AbstractController{
 	@FXML
 	private Button btnLogin = new Button();
 	@FXML
-	private Button showAnkylo = new Button();
+	private Button btnShowAnkylo = new Button();
 	@FXML
-	private Button showKamel = new Button();
+	private Button btnShowCamel = new Button();
 	
 	@FXML
 	private Label lblStatus = new Label();
@@ -28,7 +29,7 @@ public class MapControl extends AbstractController{
 	private TextField txtPassword = new TextField();
 
 	private Main main;
-	
+	private Popup popup;
 	
 	
 
@@ -48,11 +49,11 @@ public class MapControl extends AbstractController{
 		} 
 		 
 		public void showAnkylo(ActionEvent event) {
-			switchScene("tierartview");	
+			zoo.utils.Popup.displayAnkylo("Peek", "YEEEEE");;
 		}
 			 
 		public void showCamel(ActionEvent event) {
-			switchScene("tierartview");
+			;
 		}
 		
 		public void switchScene(String sceneName){
@@ -62,7 +63,9 @@ public class MapControl extends AbstractController{
 		public void setMain(Main main){
 		    this.main = main;
 		}
-
+public void setPopup(Popup popup) {
+	this.popup = popup;
+}
 	
 		public Label getLblStatus() {
 			return lblStatus;
