@@ -79,8 +79,7 @@ public class TierModel {
 	
 	@Override
 	public String toString() {
-		return "Name: " + name + " Größe: " + height + " Alter: " + tieralter
-				+ " Geschlecht: " + gender + " Geburtsdatum: " + date + " Tierart: " + tierart;
+		return tierart + ": " + name ;
 	}
 	
 	

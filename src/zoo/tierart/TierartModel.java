@@ -51,8 +51,7 @@ public class TierartModel {
 	}
 	@Override
 	public String toString() {
-		return "TierartModel [gattung=" + gattung + ", anzahl=" + anzahl + ", lebensraum=" + lebensraum + ", groesse="
-				+ groesse + ", nahrung=" + nahrung + "]";
+		return gattung;
 	}
 	
 	

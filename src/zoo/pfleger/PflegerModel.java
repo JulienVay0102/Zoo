@@ -42,7 +42,7 @@ public class PflegerModel {
 	
 	@Override
 	public String toString() {
-		return "PflegerModel [pflegerID=" + pflegerID + ", vname=" + vname + ", nname=" + nname + "]";
+		return vname + " " + nname ;
 	}
 
 }
