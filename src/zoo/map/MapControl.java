@@ -1,5 +1,6 @@
 package zoo.map;
 
+import javafx.beans.binding.When;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,7 +13,13 @@ public class MapControl {
 	@FXML
 	private Button btnLogin = new Button();
 	@FXML
+	private Button showAnkylo = new Button();
+	@FXML
+	private Button showKamel = new Button();
+	
+	@FXML
 	private Label lblStatus = new Label();
+
 	@FXML
 	private TextField txtUsername = new TextField();
 	@FXML
@@ -31,7 +38,13 @@ public class MapControl {
 		}
 		
 	}
-
+//	
+//public void showAnimal(ActionEvent event) {
+// if showAnkylo (switchScene("tierartview"))
+	
+//public void showCamel(ActionEvent event) {
+//		main.switchScene("tierartview");
+//	}
 
 	public void switchScene(String sceneName){
         main.switchScene(sceneName);
