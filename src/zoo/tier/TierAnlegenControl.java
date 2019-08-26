@@ -3,6 +3,7 @@ package zoo.tier;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
+import zoo.utils.AbstractController;
 import zoo.utils.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +15,7 @@ import zoo.tier.TierDAO;
 import zoo.tierart.TierartDao;
 import zoo.tierart.TierartModel;
 
-public class TierAnlegenControl {
+public class TierAnlegenControl extends AbstractController{
 	
 private Main main;
 	
@@ -60,6 +61,10 @@ private Main main;
     public void onBackButtonClicked () {
 		 switchScene("pflegerview");
 	 }
+    
+    public void onLoad() {
+    	
+    }
     
 
 }

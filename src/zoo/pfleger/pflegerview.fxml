@@ -10,6 +10,5 @@
       <Button layoutX="847.0" layoutY="658.0" mnemonicParsing="false" onAction="#onUpdateButtonClicked" text="Bearbeiten" />
       <Label fx:id="label" layoutX="56.0" layoutY="72.0" text="Label" />
       <Button layoutX="729.0" layoutY="658.0" mnemonicParsing="false" onAction="#onCreateButtonClicked" text="Anlegen" />
-      <Button layoutX="447.0" layoutY="658.0" mnemonicParsing="false" onAction="#onTableUpdate" prefHeight="45.0" prefWidth="270.0" text="Tabelle neu laden" />
    </children>
 </Pane>

@@ -14,6 +14,7 @@ import zoo.tier.TierAnlegenControl;
 public class Main extends Application {
 
     public HashMap<String, Scene> scenes = new HashMap<String, Scene>();
+    public HashMap<String, AbstractController> controllers = new HashMap<String, AbstractController>();
     private Stage primaryStage;
 
     @Override
@@ -24,6 +25,7 @@ public class Main extends Application {
         fxmlLoader.setLocation(Main.class.getResource("../../zoo/map/mapview.fxml"));
         scenes.put("mapview",new Scene(fxmlLoader.load(), 1100, 1000));
         MapControl controller = fxmlLoader.getController();
+        controllers.put("mapview", controller);
         controller.setMain(this);
 
         
@@ -31,14 +33,16 @@ public class Main extends Application {
         fxmlLoader.setLocation(Main.class.getResource("../../zoo/pfleger/pflegerview.fxml"));
         Scene scenePfleger = new Scene(fxmlLoader.load(), 1100, 1000);
         scenes.put("pflegerview", scenePfleger);
-        PflegerControl controller2 = fxmlLoader.getController();
-        controller2.setMain(this);
+        PflegerControl pflegerController = fxmlLoader.getController();
+        controllers.put("pflegerview", pflegerController);
+        pflegerController.setMain(this);
         
         fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(Main.class.getResource("../../zoo/tier/tieranlegenview.fxml"));
         Scene sceneTierAnlegen = new Scene(fxmlLoader.load(), 1100, 1000);
         scenes.put("tieranlegenview", sceneTierAnlegen);
         TierAnlegenControl tierAnlegenController = fxmlLoader.getController();
+        controllers.put("tieranlegenview", tierAnlegenController);
         tierAnlegenController.setMain(this);
 
         primaryStage.setTitle("Affenzirkus");
@@ -48,6 +52,8 @@ public class Main extends Application {
     }
 
     public void switchScene(String sceneName){
+    	AbstractController c = controllers.get(sceneName);
+    	c.onLoad();
         primaryStage.setScene(scenes.get(sceneName));
     }
 
