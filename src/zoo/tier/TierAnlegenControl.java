@@ -1,22 +1,16 @@
 package zoo.tier;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import zoo.utils.Main;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import zoo.pfleger.PflegerControl;
 import zoo.pfleger.PflegerDao;
 import zoo.pfleger.PflegerModel;
 import zoo.tier.TierDAO;
-import zoo.tier.TierModel;
 import zoo.tierart.TierartDao;
 import zoo.tierart.TierartModel;
 
@@ -60,6 +54,7 @@ private Main main;
     public void OnAnlegenClick() {
     	TierDAO.createTier(tName.getText(), Integer.parseInt(tGroesse.getText()), Integer.parseInt(tBday.getText()), tGender.getText(), "",
     			(TierartModel)cTierart.getValue(), (PflegerModel)cPfleger.getValue());
+		 switchScene("pflegerview");
     }
     
     public void onBackButtonClicked () {
