@@ -56,8 +56,7 @@ public class TierDAO {
 			ps.setInt		(7, pfleger.getPflegerID());
 	        ps.executeUpdate();
 			
-			//String sql = "";
-            //statement.executeUpdate(sql);
+          
                       
 		} catch (SQLException e) {
 			e.printStackTrace();

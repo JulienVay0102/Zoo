@@ -27,6 +27,8 @@ public class PflegerControl {
 
 	TierModel tierModel;
 	
+	ObservableList<TierModel> obsTierList;
+	
 	@FXML
 	ListView<TierModel> tierListView = new ListView<TierModel>();
 	
@@ -38,7 +40,7 @@ public class PflegerControl {
 		 
 		 label.setText("Pfleger Hans");
 	        
-		 ObservableList<TierModel> obsTierList = FXCollections.observableArrayList(TierDAO.getAllTier());
+		 obsTierList = FXCollections.observableArrayList(TierDAO.getAllTier());
 		 tierListView.setItems(obsTierList);
 		 
 		 tierListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TierModel>() {
@@ -57,7 +59,12 @@ public class PflegerControl {
 	 }
 	 
 	 public void onCreateButtonClicked () {
-		 System.out.println("anlegen");
+		 switchScene("tieranlegenview");
+	 }
+	 
+	 public void onTableUpdate () {
+		 obsTierList = FXCollections.observableArrayList(TierDAO.getAllTier());
+		 tierListView.setItems(obsTierList);
 	 }
 	
 }
