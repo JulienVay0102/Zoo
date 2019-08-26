@@ -3,7 +3,9 @@ package zoo.pfleger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import zoo.utils.AbstractController;
 import zoo.utils.Main;
+import zoo.utils.Session;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -14,7 +16,7 @@ import javafx.scene.control.ListView;
 import zoo.tier.TierDAO;
 import zoo.tier.TierModel;
 
-public class PflegerControl {
+public class PflegerControl extends AbstractController{
 
 	private Main main;
 	
@@ -38,8 +40,7 @@ public class PflegerControl {
 	 @FXML
 	 public void initialize() {
 		 
-		 label.setText("Pfleger Hans");
-	        
+	
 		 obsTierList = FXCollections.observableArrayList(TierDAO.getAllTier());
 		 tierListView.setItems(obsTierList);
 		 
@@ -62,9 +63,11 @@ public class PflegerControl {
 		 switchScene("tieranlegenview");
 	 }
 	 
-	 public void onTableUpdate () {
+	 
+	 public void onLoad () {
 		 obsTierList = FXCollections.observableArrayList(TierDAO.getAllTier());
 		 tierListView.setItems(obsTierList);
+		 label.setText(Session.getInstance().getPfleger().getVname());
 	 }
 	
 }
