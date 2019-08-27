@@ -6,9 +6,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zoo.pfleger.PflegerControl">
    <children>
-      <ListView fx:id="tierListView" layoutX="249.0" layoutY="159.0" prefHeight="460.0" prefWidth="689.0" />
+      <ListView fx:id="tierListView" layoutX="292.0" layoutY="164.0" prefHeight="456.0" prefWidth="682.0" />
       <Button layoutX="847.0" layoutY="658.0" mnemonicParsing="false" onAction="#onUpdateButtonClicked" text="Bearbeiten" />
-      <Label fx:id="label" layoutX="56.0" layoutY="72.0" text="Label" />
+      <Label fx:id="label" layoutX="757.0" layoutY="59.0" text="Label" />
       <Button layoutX="729.0" layoutY="658.0" mnemonicParsing="false" onAction="#onCreateButtonClicked" text="Anlegen" />
+      <Label layoutX="678.0" layoutY="59.0" prefHeight="31.0" prefWidth="80.0" text="Pfleger:" />
+      <Button layoutX="870.0" layoutY="52.0" mnemonicParsing="false" onAction="#onLogOut" text="Log Out" />
    </children>
 </Pane>
