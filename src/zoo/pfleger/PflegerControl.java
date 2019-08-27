@@ -11,8 +11,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import zoo.tier.TierDAO;
 import zoo.tier.TierModel;
 
@@ -43,6 +45,7 @@ public class PflegerControl extends AbstractController{
 	
 		 obsTierList = FXCollections.observableArrayList(TierDAO.getAllTier());
 		 tierListView.setItems(obsTierList);
+		   
 		 
 		 tierListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TierModel>() {
 

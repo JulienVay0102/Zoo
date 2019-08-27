@@ -1,5 +1,6 @@
 package zoo.tier;
 
+import java.io.File;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import zoo.pfleger.PflegerDao;
 import zoo.tierart.TierartDao;
@@ -43,6 +46,8 @@ public class TierController extends AbstractController {
 	private TextField tfGender;
 	@FXML
 	private TextField tfDate;
+	@FXML
+	private ImageView imgView;
 
 	@FXML
 	private void goBack() throws IOException {
@@ -62,6 +67,8 @@ public class TierController extends AbstractController {
 
 	@FXML
 	private void deleteAnimal() {
+		File file = new File("C:\\Users\\konstantin.mende\\git\\Zoo\\src\\res\\"+ Session.getInstance().getTier().getUrl() +".jpeg");
+		file.delete();
 		TierDAO.deleteTier(Integer.valueOf(tfTierID.getText()));
 		switchScene("pflegerview");
 	}
@@ -84,6 +91,11 @@ public class TierController extends AbstractController {
 		tfPflegerID.setText(Integer.toString(Session.getInstance().getTier().getPfleger().getPflegerID()));
 		tfGender.setText(Session.getInstance().getTier().getGender());
 		tfDate.setText(Session.getInstance().getTier().getDate());
+		String url = "file:///C:\\Users\\konstantin.mende\\git\\Zoo\\src\\res\\"
+				+ Session.getInstance().getTier().getUrl() + ".jpeg";
+		System.out.println(url);
+		Image img = new Image(url);
+		imgView.setImage(img);
 	}
 
 }

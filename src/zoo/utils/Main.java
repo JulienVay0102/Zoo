@@ -14,7 +14,15 @@ import zoo.tier.TierController;
 
 public class Main extends Application {
 
-    public HashMap<String, Scene> scenes = new HashMap<String, Scene>();
+    public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
+
+	public HashMap<String, Scene> scenes = new HashMap<String, Scene>();
     public HashMap<String, AbstractController> controllers = new HashMap<String, AbstractController>();
     private Stage primaryStage;
 
