@@ -14,6 +14,7 @@ public class TierModel {
 	private String date;
 	private TierartModel tierart;
 	private PflegerModel pfleger;
+	private String url;
 	
 	public TierModel(int tierID, String name, int height, int alter, String gender, String date, TierartModel tierart,
 			PflegerModel pfleger) {
@@ -76,7 +77,18 @@ public class TierModel {
 		this.pfleger = pfleger;
 	}
 	
-	
+	public int getTieralter() {
+		return tieralter;
+	}
+	public void setTieralter(int tieralter) {
+		this.tieralter = tieralter;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	@Override
 	public String toString() {
 		return tierart + ": " + name ;

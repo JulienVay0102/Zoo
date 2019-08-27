@@ -30,7 +30,8 @@ public class TierDAO {
 	        	tier.setGender(rs.getString	("gender"));
 	        	tier.setDate(rs.getString	("date"));
 	        	tier.setTierart(TierartDao.getTierartModel(rs.getString("gattung")));
-	        	tier.setPfleger(PflegerDao.getPflegerModel(rs.getInt("pflegerId")));     
+	        	tier.setPfleger(PflegerDao.getPflegerModel(rs.getInt("pflegerId")));
+	        	tier.setUrl(rs.getString("url"));
 	        }
             return tier;       
 		} catch (SQLException e) {
@@ -39,11 +40,12 @@ public class TierDAO {
 		}
 	}
 	
-	public static void createTier(String name, int height, int alter, String gender, String date, TierartModel tierart, PflegerModel pfleger ) {
+	public static void createTier(String name, int height, int alter, String gender, String date,
+			TierartModel tierart, PflegerModel pfleger, String url) {
 		try {
 			Connection conn = DBConnection.getConnection();
 	
-				final String sql = "INSERT INTO tier (name, height, tieralter, gender, date, gattung, pflegerID) VALUES (?,?,?,?,?,?,?)";
+				final String sql = "INSERT INTO tier (name, height, tieralter, gender, date, gattung, pflegerID, url) VALUES (?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 		
@@ -54,6 +56,7 @@ public class TierDAO {
 			ps.setString	(5, date);
 			ps.setString	(6, tierart.getGattung());
 			ps.setInt		(7, pfleger.getPflegerID());
+			ps.setString	(8, url);
 	        ps.executeUpdate();
 			
           
@@ -126,6 +129,7 @@ public class TierDAO {
 		        	tier.setTierart		(null);
 		        	tier.setTierart(TierartDao.getTierartModel(rs.getString("gattung")));
 		        	tier.setPfleger(PflegerDao.getPflegerModel(rs.getInt("pflegerID")));
+		        	tier.setUrl(rs.getString("url"));
 		        	
 		        	tierListe.add(tier);
 			 }
