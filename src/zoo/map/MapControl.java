@@ -9,6 +9,7 @@ import javafx.stage.Popup;
 import zoo.pfleger.PflegerModel;
 import zoo.utils.AbstractController;
 import zoo.utils.Main;
+import zoo.utils.PopupTierart;
 import zoo.utils.Session;
 
 public class MapControl extends AbstractController{
@@ -49,7 +50,8 @@ public class MapControl extends AbstractController{
 		} 
 		 
 		public void showAnkylo(ActionEvent event) {
-			zoo.utils.Popup.displayAnkylo("Peek", "YEEEEE");;
+			PopupTierart popupTest = new PopupTierart();
+			popupTest.displayPopup(main.getPrimaryStage(),btnShowAnkylo.getText());
 		}
 			 
 		public void showCamel(ActionEvent event) {

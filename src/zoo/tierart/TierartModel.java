@@ -16,6 +16,20 @@ public class TierartModel {
 		this.groesse = groesse;
 		this.nahrung = nahrung;
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Gattung:    " 			+ gattung 		+ "\n"	+
+				"Anzahl:    " 			+ anzahl 		+ "\n"	+
+				"Lebensraum: " 		+ lebensraum 	+ "\n"	+
+				"Größe:     "				+ groesse 		+ "\n"	+
+				"Nahrung:   " 			+ nahrung;
+	}
+
+
+
 	public TierartModel() {
 		// TODO Auto-generated constructor stub
 	}
@@ -49,11 +63,4 @@ public class TierartModel {
 	public void setNahrung(String nahrung) {
 		this.nahrung = nahrung;
 	}
-	@Override
-	public String toString() {
-		return gattung;
-	}
-	
-	
-
 }

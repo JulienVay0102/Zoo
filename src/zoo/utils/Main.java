@@ -69,6 +69,32 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+	public HashMap<String, Scene> getScenes() {
+		return scenes;
+	}
+
+	public void setScenes(HashMap<String, Scene> scenes) {
+		this.scenes = scenes;
+	}
+
+	public HashMap<String, AbstractController> getControllers() {
+		return controllers;
+	}
+
+	public void setControllers(HashMap<String, AbstractController> controllers) {
+		this.controllers = controllers;
+	}
+
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
+    
+    
 }
 
 
