@@ -70,5 +70,10 @@ public class PflegerControl extends AbstractController{
 		 tierListView.setItems(obsTierList);
 		 label.setText(Session.getInstance().getPfleger().getVname());
 	 }
+	 
+	 public void onLogOut() {
+		 switchScene("mapview");
+		 Session.getInstance().setPfleger(null);
+	 }
 	
 }
