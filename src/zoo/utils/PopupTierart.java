@@ -40,7 +40,7 @@ public void displayPopup(final Stage primaryStage, String gattung) {
     popup.setHideOnEscape(true);
     
   //Definition des TextAreas bzw. füllen sowie CSS-Styling
-   TextArea text = new TextArea(tierartDaten.toString());
+   TextArea text = new TextArea(tierartDaten.toStringForPopUp());
    text.setDisable(true);
  
    text.setStyle(

@@ -19,13 +19,18 @@ public class TierartModel {
 	
 	
 	
-	@Override
-	public String toString() {
+	
+	public String toStringForPopUp() {
 		return "Gattung:    " 			+ gattung 		+ "\n"	+
 				"Anzahl:    " 			+ anzahl 		+ "\n"	+
 				"Lebensraum: " 		+ lebensraum 	+ "\n"	+
 				"Größe:     "				+ groesse 		+ "\n"	+
 				"Nahrung:   " 			+ nahrung;
+	}
+	
+	@Override
+	public String toString() {
+		return gattung;
 	}
 
 
