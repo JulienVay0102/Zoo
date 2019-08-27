@@ -8,30 +8,39 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import zoo.tierart.TierartDao;
+import zoo.tierart.TierartModel;
 
 public class Popup {
-
-public static void displayAnkylo(String title, String message) {
-	Stage ankyloWindow = new Stage();
+	TierartModel tierartDaten;
 	
-	ankyloWindow.initModality(Modality.APPLICATION_MODAL);
-	ankyloWindow.setTitle("Peek");
-	ankyloWindow.setMinWidth(1000);
-	ankyloWindow.setMinHeight(1100);
+public void showContent(String gattung) {
+		tierartDaten = TierartDao.getTierartModel(gattung);
+	}
+
+
+public static void displayPopup(String title, String message) {
+	//showContent()
+	Stage window = new Stage();
+	
+	window.initModality(Modality.APPLICATION_MODAL);
+	//window.setTitle();
+	window.setMinWidth(1000);
+	window.setMinHeight(1100);
 	
 	Label labelAnkylo = new Label();
 	labelAnkylo.setText("Ankylosaurus");
 	Button closeWindowAnkylo = new Button("Fenster schließen");
 	
-	closeWindowAnkylo.setOnAction(e -> ankyloWindow.close());
+	//closeWindowAnkylo.setOnAction(e -> ankyloWindow.close());
 	
 	VBox layout = new VBox(10);
 	layout.getChildren().addAll(labelAnkylo, closeWindowAnkylo);
 	layout.setAlignment(Pos.CENTER);
 	
 	Scene sceneAnkylo = new Scene(layout);
-	ankyloWindow.setScene(sceneAnkylo);
-	ankyloWindow.showAndWait();
+	//ankyloWindow.setScene(sceneAnkylo);
+	//ankyloWindow.showAndWait();
 	
 }
 	
