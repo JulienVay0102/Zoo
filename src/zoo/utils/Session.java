@@ -2,7 +2,12 @@ package zoo.utils;
 
 import zoo.pfleger.PflegerModel;
 import zoo.tier.TierModel;
-
+/**
+ * This class is managing the communication over views. As a singleton pattern, 
+ * it saves one specific object of a pfleger and a tier.
+ * @author Julien
+ *
+ */
 public class Session {
 	 
 	  

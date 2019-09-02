@@ -1,5 +1,4 @@
-                            package zoo.pfleger;
-
+package zoo.pfleger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,6 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import zoo.tier.TierDAO;
 import zoo.tier.TierModel;
+
 
 
 /**
@@ -52,14 +52,15 @@ public class PflegerControl extends AbstractController{
      * Creating a listview of the class "TierModel".
      */
 	TierModel tierModel;
-	
+
 	ObservableList<TierModel> obsTierList;
-	
+
 	@FXML
 	ListView<TierModel> tierListView = new ListView<TierModel>();
-	
+
 	@FXML
 	Label label = new Label();
+
 	
 	/**
 	 *This method fills the observable list and the listview with data from the database when the user is switching to the scene. 
@@ -114,4 +115,5 @@ public class PflegerControl extends AbstractController{
 		 Session.getInstance().setPfleger(null);
 	 }
 	
+
 }

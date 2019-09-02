@@ -15,51 +15,47 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import zoo.tierart.TierartDao;
 import zoo.tierart.TierartModel;
-
+/**
+ * This class is used for creating Popups on the Mapview. It shows the information about a tierart.
+ * The method displayPopup opens the new Popupview on the primaryStage.
+ * The method expects the primaryStage and the gattung to get the Data of an tierart from the DB.
+ * @author Julien
+ *
+ */
 public class PopupTierart {
 	TierartModel tierartDaten;
-	
-	
-public void setTierartDaten(String gattung) {
+
+	public void setTierartDaten(String gattung) {
 		tierartDaten = TierartDao.getTierartModel(gattung);
 	}
 
+	public void displayPopup(final Stage primaryStage, String gattung) {
+		this.setTierartDaten(gattung);
 
-public void displayPopup(final Stage primaryStage, String gattung) {
-	this.setTierartDaten(gattung);
-	
-	Popup popup = new Popup();
-	
-	popup.setX(450);
-    popup.setY(500);
-    
-   
-    popup.hideOnEscapeProperty();
-    popup.setAutoFix(true);
-    popup.setAutoHide(true);
-    popup.setHideOnEscape(true);
-    
-  //Definition des TextAreas bzw. füllen sowie CSS-Styling
-   TextArea text = new TextArea(tierartDaten.toStringForPopUp());
-   text.setDisable(true);
- 
-   text.setStyle(
-		  "-fx-font-size: 2em;"
-   		+ "-fx-background-color: RGB(127, 51, 0);"
-   		+ "-fx-padding: 0.2em;"
-   		+ "-fx-opacity: 1;"
-   		+"-fx-font-color: RGB(127, 51, 0)"
-   		);
-   
-   
-    popup.getContent().add(text);
-    
-    popup.show(primaryStage);
+		Popup popup = new Popup();
 
-	
-}
-	
-	
-	
-	
+		popup.setX(450);
+		popup.setY(500);
+
+		popup.hideOnEscapeProperty();
+		popup.setAutoFix(true);
+		popup.setAutoHide(true);
+		popup.setHideOnEscape(true);
+
+		// Definition des TextAreas bzw. füllen sowie CSS-Styling
+		TextArea text = new TextArea(tierartDaten.toStringForPopUp());
+		text.setDisable(true);
+
+		text.setStyle("-fx-font-size: 2em;" 
+		+ "-fx-background-color: RGB(127, 51, 0);" 
+		+ "-fx-padding: 0.2em;"
+		+ "-fx-opacity: 1;" 
+		+ "-fx-font-color: RGB(127, 51, 0)");
+
+		popup.getContent().add(text);
+
+		popup.show(primaryStage);
+
+	}
+
 }
