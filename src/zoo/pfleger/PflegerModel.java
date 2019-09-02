@@ -1,5 +1,11 @@
 package zoo.pfleger;
 
+/**
+ * Modelclass for Pfleger
+ * @author mstuebing
+ *
+ */
+
 public class PflegerModel {
 
 	private int pflegerID;
@@ -16,6 +22,12 @@ public class PflegerModel {
 	public PflegerModel() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * Following a list of this classes getter and setter.
+	 * @return
+	 */
+	
 	public int getPflegerID() {
 		return pflegerID;
 	}
