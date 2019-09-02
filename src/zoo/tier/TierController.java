@@ -16,7 +16,11 @@ import zoo.tierart.TierartDao;
 import zoo.utils.AbstractController;
 import zoo.utils.Main;
 import zoo.utils.Session;
-
+/**
+ * The tiercontroller is managing the tierView.
+ * @author Administrator
+ *
+ */
 public class TierController extends AbstractController {
 	private Main main;
 
@@ -80,7 +84,9 @@ public class TierController extends AbstractController {
 	public void setMain(Main main) {
 		this.main = main;
 	}
-
+/**
+ * The onLoad method is initialising the TierView with the information from the Session
+ */
 	public void onLoad() {
 		System.out.println((Session.getInstance().getTier().getHeight()));
 		tfTierID.setText(Integer.toString(Session.getInstance().getTier().getTierID()));

@@ -1,5 +1,9 @@
 package zoo.tier;
-
+/**
+ * This method implements the filechooser to upload the animalpictures and the managing of the forms
+ * to add a new TierModel to the database.
+ * @author Konstantin
+ */
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
@@ -96,7 +100,9 @@ public class TierAnlegenControl extends AbstractController {
 	public void onLoad() {
 
 	}
-
+/**
+ * This method implements the button to upload a picture for a TierModel.
+ */
 	public void onUploadClick() {
 		FileChooser fileChooser = new FileChooser();
 		selectedFile = fileChooser.showOpenDialog(main.getPrimaryStage());

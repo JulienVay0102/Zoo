@@ -1,5 +1,7 @@
 package zoo.tierart;
-
+/**
+ * This is the Data Access Object for the Tierart table.
+ */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

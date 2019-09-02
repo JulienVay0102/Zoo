@@ -11,10 +11,16 @@ import zoo.map.MapControl;
 import zoo.pfleger.PflegerControl;
 import zoo.tier.TierAnlegenControl;
 import zoo.tier.TierController;
-
+/**
+ * The main contains the start method where the primary stages for javafx get set.
+ * It also manages the scenes and the sceneSwitch.
+ * Also it manages the controllers and their initialisation after a scene-switch
+ * @author Julien, mstuebing, Konstantin
+ *
+ */
 public class Main extends Application {
 
-
+	
 	public HashMap<String, Scene> scenes = new HashMap<String, Scene>();
     public HashMap<String, AbstractController> controllers = new HashMap<String, AbstractController>();
     private Stage primaryStage;
@@ -23,7 +29,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
         FXMLLoader fxmlLoader = new FXMLLoader();
-
+/**
+ * All views need to get defined in the main and written in the scenes HashMap. The method sceneSwitch
+ * manages the call of the scenes. The following code is defining the views.
+ */
         fxmlLoader.setLocation(Main.class.getResource("../../zoo/map/mapview.fxml"));
         scenes.put("mapview",new Scene(fxmlLoader.load(), 1100, 1000));
         MapControl controller = fxmlLoader.getController();
@@ -55,12 +64,16 @@ public class Main extends Application {
         controllers.put("tierview", tierController);
         tierController.setMain(this);
 
-        primaryStage.setTitle("Affenzirkus");
+        primaryStage.setTitle("Zoo");
         primaryStage.setScene(scenes.get("mapview"));
         primaryStage.show();
 
     }
-
+/**
+ * switchScene is changing the view of the primaryStage
+ * It also uses the onload function for the initialization of the views.
+ * @param sceneName
+ */
     public void switchScene(String sceneName){
     	AbstractController c = controllers.get(sceneName);
     	c.onLoad();
