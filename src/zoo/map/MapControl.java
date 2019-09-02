@@ -1,10 +1,22 @@
 package zoo.map;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.Hashtable;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Popup;
 import zoo.pfleger.PflegerModel;
 import zoo.utils.AbstractController;
@@ -43,17 +55,19 @@ public class MapControl extends AbstractController {
 
 	}
 
-	public void showAnimal(ActionEvent event) {
-
+	public void showAnimal(ActionEvent event, Button button) {
+		
 	}
 
-	public void showAnkylo(ActionEvent event) {
+	public void showAnkylo(ActionEvent event) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 		PopupTierart popupTest = new PopupTierart();
 		popupTest.displayPopup(main.getPrimaryStage(), btnShowAnkylo.getText());
+	
 	}
 
 	public void showCamel(ActionEvent event) {
-		;
+		PopupTierart popupTest = new PopupTierart();
+		popupTest.displayPopup(main.getPrimaryStage(), btnShowCamel.getText());
 	}
 
 	public void switchScene(String sceneName) {
