@@ -12,7 +12,20 @@ import zoo.utils.Main;
 import zoo.utils.PopupTierart;
 import zoo.utils.Session;
 
+/**
+ * 
+ * @author mstuebing 
+ * This class is responsible for the communication between the main screen (mapview) of the application and the 
+ * pflegerview screen.
+ * It's handeling the buttons
+ * "btnLogin","btnShowAnkylo" and "btnShowCamel", aswell as the label "lblStatus", the textfields "txtUsername" and "txtPassword"
+ */
+
 public class MapControl extends AbstractController {
+
+	/**
+	 * At this point we are implementing the buttons, labels and textfields. 
+	 */
 
 	@FXML
 	private Button btnLogin = new Button();
@@ -28,10 +41,17 @@ public class MapControl extends AbstractController {
 	private TextField txtUsername = new TextField();
 	@FXML
 	private TextField txtPassword = new TextField();
-
+	
 	private Main main;
 	private Popup popup;
 
+	/**
+	 * This method checks if the login informations which are given by the user of the application are correct.
+	 * If the informations are correct, this method will switch the current scene with the screen "pflegerview".
+	 * If the informations are incorrect, this method will stay on the current scene and sets the label to "Login failed".
+	 * @param event
+	 */
+	
 	public void pflegerLogin(ActionEvent event) {
 		if (txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
 			Session.getInstance().setPfleger(new PflegerModel(5, txtUsername.getText(), txtPassword.getText()));
@@ -43,9 +63,11 @@ public class MapControl extends AbstractController {
 
 	}
 
-	public void showAnimal(ActionEvent event) {
-
-	}
+	/**
+	 * This method will open a pop-up window if the user of the application presses the button "Ankylosaurus"
+	 * on the scene "mapview".
+	 * @param event
+	 */
 
 	public void showAnkylo(ActionEvent event) {
 		PopupTierart popupTest = new PopupTierart();
@@ -56,10 +78,20 @@ public class MapControl extends AbstractController {
 		;
 	}
 
+	/**
+	 * This method is responsible for changing the current scene with a new one.
+	 * @param sceneName
+	 */
+	
 	public void switchScene(String sceneName) {
 		main.switchScene(sceneName);
 	}
 
+	/**
+	 * All the setter and getter methods from class "MapControl"
+	 * @param main
+	 */
+	
 	public void setMain(Main main) {
 		this.main = main;
 	}
@@ -92,6 +124,10 @@ public class MapControl extends AbstractController {
 		this.txtPassword = txtPassword;
 	}
 
+	/**
+	 * This method initializes the view.
+	 */
+	
 	public void onLoad() {
 
 	}
