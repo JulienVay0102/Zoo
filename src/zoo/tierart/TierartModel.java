@@ -1,5 +1,9 @@
 package zoo.tierart;
-
+/**
+ * This is the data class for the TierartModel
+ * @author Administrator
+ *
+ */
 public class TierartModel {
 	
 	private String gattung;

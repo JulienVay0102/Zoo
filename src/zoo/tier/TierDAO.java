@@ -9,7 +9,11 @@ import zoo.pfleger.PflegerModel;
 import zoo.tierart.TierartDao;
 import zoo.tierart.TierartModel;
 import zoo.utils.DBConnection;
-
+/**
+ * This is the data class for the tier table.
+ * @author Administrator
+ *
+ */
 public class TierDAO {
 	
 	public static TierModel getTier(int tierID) {

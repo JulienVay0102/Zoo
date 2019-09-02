@@ -1,7 +1,11 @@
 package zoo.utils;
 
 import java.sql.*;
-
+/**
+ * The DBCOnnection is creating a connection to the SQL Database
+ * @author Konstantin
+ *
+ */
 public class DBConnection {
 
     private static Connection myConn;
