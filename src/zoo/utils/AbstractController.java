@@ -1,7 +1,7 @@
 package zoo.utils;
 /**
- * This class has got the onLoad method for all Controllers who inherit from this.
- * @author Julien
+ * This class serves as abstract class for the controller hashmap, so that other other controllers can inherit from it.
+ * @author Julien, Konstantin
  *
  */
 public abstract class AbstractController {

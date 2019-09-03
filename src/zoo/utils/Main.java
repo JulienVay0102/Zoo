@@ -29,10 +29,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
         FXMLLoader fxmlLoader = new FXMLLoader();
-/**
- * All views need to get defined in the main and written in the scenes HashMap. The method sceneSwitch
- * manages the call of the scenes. The following code is defining the views.
- */
+        
+		/**
+		 * All views need to get defined in the main and written in the scenes HashMap. The method sceneSwitch
+		 * manages the call of the scenes. The following code is defining the views.
+		 */
+        
         fxmlLoader.setLocation(Main.class.getResource("../../zoo/map/mapview.fxml"));
         scenes.put("mapview",new Scene(fxmlLoader.load(), 1100, 1000));
         MapControl controller = fxmlLoader.getController();
@@ -69,11 +71,11 @@ public class Main extends Application {
         primaryStage.show();
 
     }
-/**
- * switchScene is changing the view of the primaryStage
- * It also uses the onload function for the initialization of the views.
- * @param sceneName
- */
+		/**
+		 * switchScene is changing the view of the primaryStage
+		 * It also uses the onload function for the initialization of the views.
+		 * @param sceneName
+		 */
     public void switchScene(String sceneName){
     	AbstractController c = controllers.get(sceneName);
     	c.onLoad();

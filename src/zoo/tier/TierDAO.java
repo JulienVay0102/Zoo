@@ -10,8 +10,8 @@ import zoo.tierart.TierartDao;
 import zoo.tierart.TierartModel;
 import zoo.utils.DBConnection;
 /**
- * This is the data class for the tier table.
- * @author Administrator
+ * This is the data access class for the tier table.
+ * @author Julien
  *
  */
 public class TierDAO {
