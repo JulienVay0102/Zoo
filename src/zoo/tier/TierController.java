@@ -73,7 +73,7 @@ public class TierController extends AbstractController {
 
 	@FXML
 	private void deleteAnimal() {
-		File file = new File("C:\\Users\\konstantin.mende\\git\\Zoo\\src\\res\\"+ Session.getInstance().getTier().getUrl() +".jpeg");
+		File file = new File("./src/res/"+ Session.getInstance().getTier().getUrl() +".jpeg");
 		file.delete();
 		TierDAO.deleteTier(Integer.valueOf(tfTierID.getText()));
 		switchScene("pflegerview");
