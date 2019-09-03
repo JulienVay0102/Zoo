@@ -79,7 +79,7 @@ public class TierAnlegenControl extends AbstractController {
 
 		
 		System.out.println(selectedFile.toString());
-		dummyFile = new File("C:\\Users\\konstantin.mende\\git\\Zoo\\src\\res\\" + tName.getText() + tBday.getText() + ".jpeg");
+		dummyFile = new File("./src/res/" + tName.getText() + tBday.getText() + ".jpeg");
 		System.out.println(dummyFile.toString());
 		if (selectedFile != null) {
 		    try {

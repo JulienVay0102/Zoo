@@ -2,6 +2,8 @@ package zoo.tier;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -97,10 +99,10 @@ public class TierController extends AbstractController {
 		tfPflegerID.setText(Integer.toString(Session.getInstance().getTier().getPfleger().getPflegerID()));
 		tfGender.setText(Session.getInstance().getTier().getGender());
 		tfDate.setText(Session.getInstance().getTier().getDate());
-		String url = "file:///C:\\Users\\konstantin.mende\\git\\Zoo\\src\\res\\"
+		String path = "file:src/res/"
 				+ Session.getInstance().getTier().getUrl() + ".jpeg";
-		System.out.println(url);
-		Image img = new Image(url);
+		System.out.println(path);
+		Image img = new Image(path);
 		imgView.setImage(img);
 	}
 
