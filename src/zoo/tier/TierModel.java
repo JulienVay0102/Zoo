@@ -6,7 +6,7 @@ import zoo.tierart.*;
 /**
  * This is the data class for the Tier table.
  * 
- * @author Administrator
+ * @author Julien
  *
  */
 public class TierModel {

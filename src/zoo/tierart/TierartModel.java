@@ -1,7 +1,7 @@
 package zoo.tierart;
 /**
  * This is the data class for the TierartModel
- * @author Administrator
+ * @author Konstantin.Mende
  *
  */
 public class TierartModel {

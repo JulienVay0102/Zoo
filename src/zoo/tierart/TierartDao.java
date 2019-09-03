@@ -1,6 +1,10 @@
 package zoo.tierart;
+
 /**
  * This is the Data Access Object for the Tierart table.
+ * It enables other classes to either create, get, update or delete a specific tierart from the database
+ * Or get a list of all tierart objects
+ * @author Konstantin.Mende
  */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -114,6 +118,9 @@ public class TierartDao {
 		
 	}
 	
+	/**
+	 * @return
+	 */
 	public static ArrayList<TierartModel> getAllTierart(){
 		
 		ArrayList<TierartModel> tierartModelList = new ArrayList<TierartModel>();

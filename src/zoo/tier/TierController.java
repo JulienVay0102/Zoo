@@ -18,7 +18,7 @@ import zoo.utils.Main;
 import zoo.utils.Session;
 /**
  * The tiercontroller is managing the tierView.
- * @author Administrator
+ * @author Julien
  *
  */
 public class TierController extends AbstractController {
